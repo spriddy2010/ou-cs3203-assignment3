@@ -5,19 +5,16 @@
  *      Author: sprid
  */
 #include <iostream>
+#include <list>
+#include <iterator>
 using namespace std;
 
-int additionMethod(int size) {
-	int array[size];
-	int number;
+int additionMethod(list<int> numList) {
 	int adding = 0;
-	cout << "Enter integers of array: ";
-	for(int i= 0; i < size; i++) {
-		cin >> number;
-		array[i] = number;
-	}
-	for (int i = 0; i < size; i++) {
-		adding = array[i] + adding;
+	auto i = numList.begin();
+	for(int j = 0;j < numList.size(); j++) {
+		adding = *i + adding;
+		advance(i, 1);
 	}
 	return adding;
 }
