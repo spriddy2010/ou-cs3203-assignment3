@@ -27,4 +27,23 @@ advance(i, 1);
 }
 return multiply;
 }
+int main () {
+	list<int> numbers;
+	int number;
+	int size;
 
+	cout << "Please enter the length of the list: " << endl;
+	cin >> size;
+	if(size <=0) {
+		cout << "Please enter a number greater than 0 for the size." << endl;
+		return 0;
+	}
+	cout << "Please enter the integers for calculations: " << endl;
+
+	for(int i = 0; i < size; i++) {
+		cin >> number;
+		numbers.push_front(number);
+	}
+	cout << "Here is the addition of the list of numbers: " << additionMethod(numbers) << endl;
+	cout << "Here is the multiplication of the list of number: " << multiplyMethod(numbers) << endl;
+}
