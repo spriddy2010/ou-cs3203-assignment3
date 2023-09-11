@@ -18,4 +18,13 @@ int additionMethod(list<int> numList) {
 	}
 	return adding;
 }
+int multiplyMethod(list<int> numList) {
+int multiply = 1;
+auto i = numList.begin();
+for(int j = 0;j < numList.size(); j++) {
+multiply = *i * multiply;
+advance(i, 1);
+}
+return multiply;
+}
 
