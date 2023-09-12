@@ -7,34 +7,40 @@
 #include <iostream>
 #include <list>
 #include <iterator>
+#include <bits/stdc++.h>
 using namespace std;
 
 int additionMethod(list<int> numList) {
 	int adding = 0;
-	auto i = numList.begin();
-	for(int j = 0;j < numList.size(); j++) {
-		adding = *i + adding;
-		advance(i, 1);
+	for(auto itr = numList.begin(); itr != numList.end(); itr++) {
+		adding = *itr + adding;
 	}
 	return adding;
 }
 int multiplyMethod(list<int> numList) {
-int multiply = 1;
-auto i = numList.begin();
-for(int j = 0;j < numList.size(); j++) {
-multiply = *i * multiply;
-advance(i, 1);
+	int multiply = 1;
+	for(auto itr = numList.begin(); itr != numList.end(); itr++) {
+		multiply = *itr * multiply;
 }
-return multiply;
+	return multiply;
+}
+list<int> reversalMethod(list<int> numList) {
+	list<int> num2;
+	auto i = numList.end();
+	for(auto itr = numList.begin(); itr != numList.end(); itr++) {
+		num2.push_front(*itr);
+	}
+	return num2;
 }
 int main () {
 	list<int> numbers;
 	int number;
+	auto i = numbers.begin();
 	int size;
 
 	cout << "Please enter the length of the list: " << endl;
 	cin >> size;
-	if(size <=0) {
+	if(size <= 0) {
 		cout << "Please enter a number greater than 0 for the size." << endl;
 		return 0;
 	}
@@ -42,8 +48,19 @@ int main () {
 
 	for(int i = 0; i < size; i++) {
 		cin >> number;
-		numbers.push_front(number);
+		numbers.push_back(number);
 	}
+	cout << numbers.front();
 	cout << "Here is the addition of the list of numbers: " << additionMethod(numbers) << endl;
 	cout << "Here is the multiplication of the list of number: " << multiplyMethod(numbers) << endl;
+
+	cout << "Initial: " << endl;
+    for (auto itr = numbers.begin(); itr != numbers.end(); itr++){
+        cout << *itr << " ";
+}
+	cout << "Put it in reverse Terry!";
+	numbers = reversalMethod(numbers);
+    for (auto itr = numbers.begin(); itr != numbers.end(); itr++){
+        cout << *itr << " ";
+}
 }
