@@ -7,7 +7,7 @@
 #include <iostream>
 #include <list>
 #include <iterator>
-#include <bits/stdc++.h>
+
 using namespace std;
 
 int additionMethod(list<int> numList) {
@@ -54,10 +54,6 @@ int main () {
 	cout << "Here is the addition of the list of numbers: " << additionMethod(numbers) << endl;
 	cout << "Here is the multiplication of the list of number: " << multiplyMethod(numbers) << endl;
 
-	cout << "Initial: " << endl;
-    for (auto itr = numbers.begin(); itr != numbers.end(); itr++){
-        cout << *itr << " ";
-}
 	cout << "Put it in reverse Terry!";
 	numbers = reversalMethod(numbers);
     for (auto itr = numbers.begin(); itr != numbers.end(); itr++){
